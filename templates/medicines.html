@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Diabetes Medicines</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .navbar-custom {
+            background-color: #343a40;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+        }
+
+        .navbar-brand {
+            margin-left: 5%;
+            font-weight: bolder;
+        }
+
+        .medicines-section {
+            padding: 60px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
+        }
+
+        .text-center {
+            font-family: Arial, sans-serif;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #343a40;
+        }
+
+        .card-body {
+            text-align: justify;
+        }
+
+        .medicine-card {
+            margin-bottom: 20px;
+        }
+
+        .medicine-img {
+            height: 200px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            text-align: justify;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('home') }}">Diabetes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}">Test for Diabetes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('wellness') }}">Wellness Advice</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('medicines') }}">Medicines</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('contact_us') }}">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mb-5">
+        <div class="medicines-section">
+            <h1 class="text-center mb-4">Medicines for Diabetes</h1>
+
+            <!-- Type 1 Diabetes Medicines -->
+            <div class="medicine-section">
+                <h2>Type 1 Diabetes Medicines</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card medicine-card">
+                            <img src="{{ url_for('static', filename='images/insuline.jpg') }}" class="card-img-top medicine-img" alt="Medicine 1 Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Insulin</h5>
+                                <p class="card-text"> Insulin is essential for managing blood sugar levels in people
+                                    with Type 1 diabetes. It is available in various forms, including rapid-acting,
+                                    short-acting, intermediate-acting, and long-acting. Insulin helps cells absorb
+                                    glucose from the bloodstream, thereby reducing blood sugar levels.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card medicine-card">
+                            <img src="{{ url_for('static', filename='images/pramlintide.jpg') }}" class="card-img-top medicine-img"
+                                alt="Medicine 1 Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Amylin Analog (Pramlintide)</h5>
+                                <p class="card-text">Pramlintide is a synthetic form of amylin, a hormone that is
+                                    normally co-secreted with insulin by the pancreas. It is used in conjunction with
+                                    insulin to help control blood sugar levels, particularly after meals. It works by
+                                    slowing gastric emptying, suppressing glucagon secretion, and promoting satiety.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card medicine-card">
+                            <img src="{{ url_for('static', filename='images/glucagon.jpg') }}" class="card-img-top medicine-img" alt="Medicine 1 Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Glucagon</h5>
+                                <p class="card-text">Glucagon is a hormone that raises blood glucose levels and is used
+                                    as an emergency treatment for severe hypoglycemia (low blood sugar). It is typically
+                                    administered as an injection when a person with Type 1 diabetes experiences
+                                    hypoglycemia and is unable to consume sugar by mouth.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type 2 Diabetes Medicines -->
+            <div class="medicine-section">
+                <h2>Type 2 Diabetes Medicines</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card medicine-card">
+                            <img src="{{ url_for('static', filename='images/metformin.jpg') }}" class="card-img-top medicine-img" alt="Medicine 2 Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Metformin</h5>
+                                <p class="card-text">Metformin is often the first medication prescribed for Type 2
+                                    diabetes. It works by reducing the amount of glucose produced by the liver and
+                                    improving the body's sensitivity to insulin, thereby helping to lower blood sugar
+                                    levels.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card medicine-card">
+                            <img src="{{ url_for('static', filename='images/glp-1_receptor_agonists.jpg') }}" class="card-img-top medicine-img"
+                                alt="Medicine 2 Image">
+                            <div class="card-body">
+                                <h5 class="card-title">GLP-1 Receptor Agonists</h5>
+                                <p class="card-text">GLP-1 receptor agonists mimic the action of the hormone GLP-1,
+                                    which increases insulin production, slows down digestion, and reduces appetite.
+                                    These medications can aid in weight loss and are often prescribed alongside other
+                                    diabetes medications.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card medicine-card">
+                            <img src="{{ url_for('static', filename='images/sitagliptin.jpg') }}" class="card-img-top medicine-img"
+                                alt="Medicine 2 Image">
+                            <div class="card-body">
+                                <h5 class="card-title">DPP-4 Inhibitors</h5>
+                                <p class="card-text">DPP-4 inhibitors work by blocking the enzyme dipeptidyl
+                                    peptidase-4, which results in increased levels of incretin hormones. These hormones
+                                    help to regulate blood glucose by increasing insulin release and decreasing glucagon
+                                    production.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card medicine-card">
+                            <img src="{{ url_for('static', filename='images/sglt2_inhibitors.jpg') }}" class="card-img-top medicine-img"
+                                alt="Medicine 2 Image">
+                            <div class="card-body">
+                                <h5 class="card-title">SGLT2 Inhibitors</h5>
+                                <p class="card-text">SGLT2 inhibitors help the kidneys remove glucose from the
+                                    bloodstream through urine. They are effective in lowering blood sugar levels and can
+                                    also have benefits for heart and kidney health.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card medicine-card">
+                            <img src="{{ url_for('static', filename='images/Thiazolidinediones_TZDs.png') }}" class="card-img-top medicine-img"
+                                alt="Medicine 2 Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Thiazolidinediones (TZDs)</h5>
+                                <p class="card-text">TZDs improve insulin sensitivity by making the body's tissues more
+                                    responsive to insulin. They are typically used in combination with other diabetes
+                                    medications.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card medicine-card">
+                            <img src="{{ url_for('static', filename='images/sulfonylureas.jpg') }}" class="card-img-top medicine-img"
+                                alt="Medicine 2 Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Sulfonylureas</h5>
+                                <p class="card-text">Sulfonylureas increase insulin production in the pancreas. They are
+                                    often used when metformin alone is not enough to control blood sugar levels.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type 3 Diabetes Medicines -->
+            <div class="medicine-section">
+                <h2>Type 3 Diabetes Medicines</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card medicine-card">
+                            <img src="{{ url_for('static', filename='images/galantamine.jpg') }}" class="card-img-top medicine-img"
+                                alt="Medicine 3 Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Galantamine</h5>
+                                <p class="card-text">Galantamine is used in the management of Type 3 diabetes
+                                    (Alzheimer’s
+                                    disease-related diabetes). It helps improve cognitive function and may slow the
+                                    progression of the disease.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card medicine-card">
+                            <img src="{{ url_for('static', filename='images/Cholinesterase_Inhibitors.jpg') }}" class="card-img-top medicine-img"
+                                alt="Medicine 3 Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Cholinesterase Inhibitors</h5>
+                                <p class="card-text">These are commonly prescribed to manage symptoms of Alzheimer's
+                                    disease by increasing levels of acetylcholine, a neurotransmitter important for
+                                    memory and learning.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card medicine-card">
+                            <img src="{{ url_for('static', filename='images/memantine.jpg') }}" class="card-img-top medicine-img" alt="Medicine 3 Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Memantine</h5>
+                                <p class="card-text"> Memantine works by regulating the activity of glutamate, another
+                                    neurotransmitter involved in learning and memory. It is often used in moderate to
+                                    severe cases of Alzheimer's disease.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer">
+            <p>&copy; 2024 Diabetes Awareness Platform. All rights reserved. Designed by Priyanka Pereira.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
